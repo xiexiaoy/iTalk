@@ -249,7 +249,7 @@ let g:clang_format#style_options = {
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'dyng/ctrlsf.vim'
-let g:ctrlsf_ackprg = '/usr/bin/ag'
+let g:ctrlsf_ackprg = 'ag'
 let g:ctrlsf_auto_focus = {
             \ "at": "start"
             \ }
@@ -424,6 +424,13 @@ set completeopt=menu,menuone,noselect
 
 " suppress annoy messages.
 set shortmess+=c
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'skywind3000/asynctasks.vim'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'skywind3000/asyncrun.vim'
+let g:asyncrun_open = 6
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'skywind3000/vim-dict'
