@@ -305,6 +305,7 @@ if executable('ctags')
 endif
 if executable('gtags-cscope') && executable('gtags')
 	let g:gutentags_modules += ['gtags_cscope']
+    set cscopeprg=gtags-cscope
 endif
 
 " 将自动生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
