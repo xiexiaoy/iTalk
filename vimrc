@@ -224,7 +224,7 @@ let g:ycm_max_diagnostics_to_display = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
-let g:ycm_goto_buffer_command = 'split'
+let g:ycm_goto_buffer_command = 'same-buffer'
 let g:ycm_python_binary_path = 'python'
 let g:ycm_max_num_candidates = 0
 let g:ycm_min_num_identifier_candidate_chars = 2
@@ -286,6 +286,7 @@ let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':1}
+let g:Lf_ExternalCommand = 'rg --files --no-ignore "%s"'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
