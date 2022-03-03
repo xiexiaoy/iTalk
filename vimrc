@@ -219,6 +219,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 set completeopt=menu,menuone
 let g:ycm_key_invoke_completion = '<C-.>'
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_auto_hover='CursorHoldI'
 let g:ycm_complete_in_comments = 1
 let g:ycm_max_diagnostics_to_display = 0
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -367,6 +368,12 @@ Plug 'sheerun/vim-polyglot'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_concepts_highlight = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'calebsmith/vim-lambdify'
@@ -444,6 +451,7 @@ Plug 'skywind3000/asynctasks.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'skywind3000/asyncrun.vim'
 let g:asyncrun_open = 6
+let g:asyncrun_rootmarks = ['.root']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'skywind3000/vim-dict'
