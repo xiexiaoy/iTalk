@@ -24,6 +24,8 @@ set ignorecase
 set relativenumber
 set number
 
+set colorcolumn=120
+
 set updatetime=2000
 
 set cmdheight=2
@@ -82,7 +84,8 @@ endif
 
 if has('gui_running')
     "字体
-    set guifont=Dejavu\ Sans\ Mono\ Book\ 11
+    "set guifont=Dejavu\ Sans\ Mono\ Book:h14
+    set guifont=Dejavu\ Sans\ Mono:h15
     set linespace=-1
     "隐藏工具栏和菜单栏和滚动条
     set guioptions-=T
@@ -293,6 +296,7 @@ let g:Lf_ExternalCommand = 'rg --files --no-ignore "%s"'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
 let $GTAGSLABEL = 'native-pygments'
+let g:gutentags_generate_on_write = 0
 
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
