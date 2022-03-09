@@ -296,7 +296,7 @@ let g:Lf_ExternalCommand = 'rg --files --no-ignore "%s"'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
 let $GTAGSLABEL = 'native-pygments'
-let g:gutentags_generate_on_write = 0
+let g:gutentags_generate_on_write = 1
 
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
 let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
