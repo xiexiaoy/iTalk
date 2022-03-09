@@ -223,20 +223,17 @@ set completeopt=menu,menuone
 let g:ycm_key_invoke_completion = '<C-.>'
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_auto_hover='CursorHoldI'
-let g:ycm_complete_in_comments = 1
+let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_max_diagnostics_to_display = 0
-let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_clangd_args=['--header-insertion=never']
+let g:ycm_complete_in_comments = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_goto_buffer_command = 'same-buffer'
 let g:ycm_python_binary_path = 'python'
 let g:ycm_max_num_candidates = 0
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_semantic_triggers = {
-            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-            \ 'cs,lua,javascript': ['re!\w{2}'],
-            \ }
 
 nnoremap <leader>jt :YcmCompleter GoTo
 nnoremap <leader>gt :YcmCompleter Get
@@ -277,20 +274,23 @@ let g:Lf_ShortcutB = '\b'
 nnoremap <c-n> :LeaderfMru<cr>
 nnoremap \f :LeaderfFunction<cr>
 nnoremap \b :LeaderfBuffer<cr>
-nnoremap \t :LeaderfBufTag<cr>
+nnoremap \t :LeaderfTag<cr>
 nnoremap \h :LeaderfHistoryCmd<cr>
 nnoremap \l :LeaderfLine<cr>
 nnoremap \c :LeaderfColorscheme<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
-let g:Lf_WorkingDirectoryMode = 'Ac'
+let g:Lf_WorkingDirectoryMode = 'c'
+let g:Lf_WindowPosition = 'popup'
 let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
-let g:Lf_PreviewResult = {'Function':0, 'BufTag':1}
+let g:Lf_PreviewCode = 1
+let g:Lf_PreviewInPopup = 1
+let g:Lf_GtagsGutentags = 1
 let g:Lf_ExternalCommand = 'rg --files --no-ignore "%s"'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -315,7 +315,7 @@ if executable('gtags-cscope') && executable('gtags')
 endif
 
 " 将自动生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
-let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_cache_dir = expand(g:Lf_CacheDirectory.'/.LfCache/gtags')
 
 " 配置 ctags 的参数，老的 Exuberant-ctags 不能有 --extra=+q，注意
 let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
