@@ -24,7 +24,7 @@ set ignorecase
 set relativenumber
 set number
 
-set colorcolumn=120
+set colorcolumn=80
 
 set updatetime=2000
 
@@ -39,8 +39,8 @@ set wildmenu
 "始终显示状态条
 set laststatus=2
 
-set aw
-set awa
+"set autowrite
+"set autowriteall
 "set spell
 
 set tm=500
@@ -274,7 +274,8 @@ let g:Lf_ShortcutB = '\b'
 nnoremap <c-n> :LeaderfMru<cr>
 nnoremap \f :LeaderfFunction<cr>
 nnoremap \b :LeaderfBuffer<cr>
-nnoremap \t :LeaderfTag<cr>
+nnoremap \t :LeaderfBufTag<cr>
+nnoremap \r :LeaderfTag<cr>
 nnoremap \h :LeaderfHistoryCmd<cr>
 nnoremap \l :LeaderfLine<cr>
 nnoremap \c :LeaderfColorscheme<cr>
