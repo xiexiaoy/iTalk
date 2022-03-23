@@ -39,7 +39,7 @@ set wildmenu
 "始终显示状态条
 set laststatus=2
 
-"set autowrite
+set autowrite
 "set autowriteall
 "set spell
 
@@ -218,22 +218,29 @@ au FileType go nnoremap \r <Plug>(go-referrers)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Valloric/YouCompleteMe'
+let g:ycm_confirm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-set completeopt=menu,menuone
 let g:ycm_key_invoke_completion = '<C-.>'
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_auto_hover='CursorHoldI'
-let g:ycm_clangd_uses_ycmd_caching = 0
+let g:ycm_clangd_uses_ycmd_caching = 1
 let g:ycm_max_diagnostics_to_display = 0
-let g:ycm_clangd_args=['--header-insertion=never']
+let g:ycm_clangd_args = ['--completion-style=detailed', '--header-insertion=never', '--background-index']
 let g:ycm_complete_in_comments = 1
+let g:ycm_disable_signature_help = 1
+let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_goto_buffer_command = 'same-buffer'
 let g:ycm_python_binary_path = 'python'
-let g:ycm_max_num_candidates = 0
+let g:ycm_max_num_candidates = 30
+let g:ycm_max_num_identifier_candidates = 5
+let g:ycm_semantic_triggers =  {
+           \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+           \ 'cs,lua,javascript': ['re!\w{2}'],
+           \ }
 
 nnoremap <leader>jt :YcmCompleter GoTo
 nnoremap <leader>gt :YcmCompleter Get
@@ -281,7 +288,7 @@ nnoremap \l :LeaderfLine<cr>
 nnoremap \c :LeaderfColorscheme<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
-let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
+let g:Lf_RootMarkers = ['.root']
 let g:Lf_WorkingDirectoryMode = 'c'
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_WindowHeight = 0.30
@@ -300,7 +307,10 @@ let $GTAGSLABEL = 'native-pygments'
 let g:gutentags_generate_on_write = 1
 
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
-let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+" let g:gutentags_project_root = ['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_project_root = ['.root']
+
 
 " 所生成的数据文件的名称
 let g:gutentags_ctags_tagfile = '.tags'
@@ -310,10 +320,10 @@ let g:gutentags_modules = []
 if executable('ctags')
 	let g:gutentags_modules += ['ctags']
 endif
-if executable('gtags-cscope') && executable('gtags')
-	let g:gutentags_modules += ['gtags_cscope']
-    set cscopeprg=gtags-cscope
-endif
+"if executable('gtags-cscope') && executable('gtags')
+"	let g:gutentags_modules += ['gtags_cscope']
+"    set cscopeprg=gtags-cscope
+"endif
 
 " 将自动生成的 ctags/gtags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
 let g:gutentags_cache_dir = expand(g:Lf_CacheDirectory.'/.LfCache/gtags')
