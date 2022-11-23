@@ -84,8 +84,8 @@ endif
 
 if has('gui_running')
     "字体
-    "set guifont=Dejavu\ Sans\ Mono\ Book:h14
-    set guifont=Dejavu\ Sans\ Mono:h15
+    set guifont=Dejavu\ Sans\ Mono\ Book\ 16
+    "set guifont=Dejavu\ Sans\ Mono:h15
     set linespace=-1
     "隐藏工具栏和菜单栏和滚动条
     set guioptions-=T
@@ -242,8 +242,8 @@ let g:ycm_semantic_triggers =  {
            \ 'cs,lua,javascript': ['re!\w{2}'],
            \ }
 
-nnoremap <leader>jt :YcmCompleter GoTo
-nnoremap <leader>gt :YcmCompleter Get
+nnoremap <c-}> :YcmCompleter GoToDeclaration<cr>
+nnoremap <c-{> :YcmCompleter<space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
@@ -289,17 +289,21 @@ nnoremap \c :LeaderfColorscheme<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
 let g:Lf_RootMarkers = ['.root']
+let g:Lf_DefaultMode = 'NameOnly'
+let g:Lf_FollowLinks = 1
+let g:Lf_NeedCacheTime = 0.5
+let g:Lf_NumberOfCache = 20
 let g:Lf_WorkingDirectoryMode = 'c'
 let g:Lf_WindowPosition = 'popup'
 let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
-let g:Lf_ShowRelativePath = 0
+let g:Lf_ShowRelativePath = 1
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewCode = 1
 let g:Lf_PreviewInPopup = 1
 let g:Lf_GtagsGutentags = 1
-let g:Lf_ExternalCommand = 'rg --files --no-ignore "%s"'
+let g:Lf_ExternalCommand = 'rg -L --files --no-ignore-vcs "%s"'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
