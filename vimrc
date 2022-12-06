@@ -21,7 +21,7 @@ set nowrapscan
 set ignorecase
 
 "行号和相对行号
-set relativenumber
+"set relativenumber
 set number
 
 set colorcolumn=80
@@ -223,7 +223,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-.>'
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_auto_hover='CursorHoldI'
-let g:ycm_clangd_uses_ycmd_caching = 1
+let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_max_diagnostics_to_display = 0
 let g:ycm_clangd_args = ['--completion-style=detailed', '--header-insertion=never', '--background-index']
 let g:ycm_complete_in_comments = 1
@@ -298,6 +298,7 @@ let g:Lf_WindowPosition = 'popup'
 let g:Lf_WindowHeight = 0.30
 let g:Lf_CacheDirectory = expand('~/.vim/cache')
 let g:Lf_ShowRelativePath = 1
+let g:Lf_ShowDevIcons = 0
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewCode = 1
@@ -394,6 +395,8 @@ let g:cpp_class_decl_highlight = 1
 let g:cpp_posix_standard = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+
+set regexpengine=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'calebsmith/vim-lambdify'
