@@ -221,7 +221,7 @@ Plug 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-.>'
-let g:ycm_show_diagnostics_ui = 0
+let g:ycm_show_diagnostics_ui = 1
 let g:ycm_auto_hover='CursorHoldI'
 let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_max_diagnostics_to_display = 0
@@ -304,7 +304,8 @@ let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewCode = 1
 let g:Lf_PreviewInPopup = 1
 let g:Lf_GtagsGutentags = 1
-let g:Lf_ExternalCommand = 'rg -L --files --no-ignore-vcs "%s"'
+let g:Lf_JumpToExistingWindow = 0
+let g:Lf_ExternalCommand = 'rg --files --no-ignore-vcs "%s"'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
