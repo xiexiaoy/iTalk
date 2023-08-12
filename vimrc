@@ -59,16 +59,6 @@ set smartindent
 set foldmethod=indent
 set foldlevel=99
 
-"主题配色
-syntax enable
-if has('gui_running')
-    set background=dark
-    colorscheme molokai
-else
-    set background=light
-    colorscheme molokai
-endif
-
 "更改备份和交换文件的位置
 set backupdir=~/.vimtmp
 set directory=~/.vimtmp
@@ -84,7 +74,7 @@ endif
 
 if has('gui_running')
     "字体
-    set guifont=Dejavu\ Sans\ Mono\ Book\ 16
+    set guifont=Dejavu\ Sans\ Mono\ Book\ 17
     "set guifont=Dejavu\ Sans\ Mono:h15
     set linespace=-1
     "隐藏工具栏和菜单栏和滚动条
@@ -225,7 +215,8 @@ let g:ycm_show_diagnostics_ui = 1
 let g:ycm_auto_hover='CursorHoldI'
 let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_max_diagnostics_to_display = 0
-let g:ycm_clangd_args = ['--completion-style=detailed', '--header-insertion=iwyu', '--background-index']
+let g:ycm_clangd_binary_path = exepath("clangd")
+let g:ycm_clangd_args = ['--completion-style=detailed', '--header-insertion=never', '--background-index']
 let g:ycm_complete_in_comments = 1
 let g:ycm_disable_signature_help = 1
 let g:ycm_add_preview_to_completeopt = 0
@@ -533,3 +524,14 @@ let g:rainbow_conf = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"主题配色
+syntax enable
+if has('gui_running')
+    set background=light
+    colorscheme solarized
+else
+    set background=dark
+    colorscheme molokai
+endif
+
