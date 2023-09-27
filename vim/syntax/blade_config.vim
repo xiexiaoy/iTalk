@@ -1,0 +1,1 @@
+/home/xiexy/github.com/Tencent/blade-build/vim/syntax/blade_config.vim

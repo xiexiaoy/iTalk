@@ -233,8 +233,7 @@ let g:ycm_semantic_triggers =  {
            \ 'cs,lua,javascript': ['re!\w{2}'],
            \ }
 
-nnoremap <c-}> :YcmCompleter GoToDeclaration<cr>
-nnoremap <c-{> :YcmCompleter<space>
+nnoremap <c-\> :YcmCompleter GoToDeclaration<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
@@ -246,6 +245,8 @@ Plug 'rhysd/vim-clang-format'
 let g:clang_format#style_options = {
             \   "ColumnLimit": 80,
             \   "AccessModifierOffset": -4}
+let g:clang_format#auto_format = 1
+" let g:clang_format#auto_format_git_diff = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'dyng/ctrlsf.vim'
@@ -297,6 +298,18 @@ let g:Lf_PreviewInPopup = 1
 let g:Lf_GtagsGutentags = 1
 let g:Lf_JumpToExistingWindow = 0
 let g:Lf_ExternalCommand = 'rg --files --no-ignore-vcs "%s"'
+let g:Lf_PreviewResult = {
+        \ 'File': 0,
+        \ 'Buffer': 1,
+        \ 'Mru': 1,
+        \ 'Tag': 1,
+        \ 'BufTag': 1,
+        \ 'Function': 1,
+        \ 'Line': 1,
+        \ 'Colorscheme': 1,
+        \ 'Rg': 1,
+        \ 'Gtags': 1
+        \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ludovicchabant/vim-gutentags'
@@ -361,6 +374,10 @@ Plug 'vim-scripts/closetag.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'zivyangll/git-blame.vim'
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'ervandew/supertab'
@@ -462,6 +479,7 @@ set shortmess+=c
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'skywind3000/asynctasks.vim'
+let g:asynctasks_term_pos = 'external'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'skywind3000/asyncrun.vim'
