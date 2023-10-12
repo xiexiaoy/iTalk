@@ -43,7 +43,7 @@ set autowrite
 "set autowriteall
 "set spell
 
-set tm=500
+set tm=400
 set ttm=0
 
 "tab设置为4个空格
@@ -374,6 +374,7 @@ Plug 'vim-scripts/closetag.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'zivyangll/git-blame.vim'
