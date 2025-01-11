@@ -277,14 +277,14 @@ nmap <Space>t :CtrlSFToggle<CR>
 Plug 'Yggdroot/LeaderF'
 let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '\b'
-nnoremap <c-n> :LeaderfMru<cr>
-nnoremap \f :LeaderfFunction<cr>
-nnoremap \b :LeaderfBuffer<cr>
-nnoremap \t :LeaderfBufTag<cr>
-nnoremap \r :LeaderfTag<cr>
-nnoremap \h :LeaderfHistoryCmd<cr>
-nnoremap \l :LeaderfLine<cr>
-nnoremap \c :LeaderfColorscheme<cr>
+nnoremap <silent> <c-n> :LeaderfMru<cr>
+nnoremap <silent> \f :LeaderfFunction<cr>
+nnoremap <silent> \b :LeaderfBuffer<cr>
+nnoremap <silent> \t :LeaderfBufTag<cr>
+nnoremap <silent> \r :LeaderfTag<cr>
+nnoremap <silent> \h :LeaderfHistoryCmd<cr>
+nnoremap <silent> \l :LeaderfLine<cr>
+nnoremap <silent> \c :LeaderfColorscheme<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
 
 let g:Lf_RootMarkers = ['.root']
@@ -412,6 +412,13 @@ Plug 'markonm/traces.vim'
 Plug 'sheerun/vim-polyglot'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<Bar>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -450,10 +457,6 @@ Plug 'muziqiushan/vim-bufonly'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'mhinz/vim-signify'
 let g:signify_update_on_bufenter = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'mbbill/undotree'
-nnoremap <leader>h :UndotreeToggle<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'mhinz/vim-startify'
